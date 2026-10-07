@@ -2,6 +2,8 @@ name: Build APK
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -30,7 +32,7 @@ jobs:
 
       - name: Build APK
         run: |
-          cd extracted/ZombieArena1000_Simple
+          cd extracted
           gradle assembleDebug
 
       - name: Upload APK
